@@ -31,9 +31,9 @@ import SwiftUI
 //ARRAY
 //var array = ["Han", "So", "Hee"]
 //print(array[2])
-//Empty Array 1
+////Empty Array 1
 //var stringArray = [String] ()
-//Empty Array 2
+////Empty Array 2
 //var EmptyArray = Array<String>()
 //stringArray.append("Hello")
 //stringArray.append("Hello")
@@ -50,7 +50,7 @@ import SwiftUI
 //    "home": "jakarta"
 //]
 //print(employee["name", default: "unknown"])
-//Dictionaries Example - note:  pay attention to let and var in dictionaries and array
+////Dictionaries Example - note:  pay attention to let and var in dictionaries and array
 //let isGraduated = [
 //    "Han": true,
 //    "So": false,
@@ -65,13 +65,57 @@ import SwiftUI
 //print (emptyDictionariesNbaChampion[2024, default: "OKC"])
 
 //SET
-let setOfKoreanNames = Set(["Song Hye Kyo", "Bae Suzy", "Lee Elijah"])
-print(setOfKoreanNames)
+//let setOfKoreanNames = Set(["Song Hye Kyo", "Bae Suzy", "Lee Elijah"])
+//print(setOfKoreanNames)
+//
+//var setOfIndonesianNames = Set<String>()
+//setOfIndonesianNames.insert("Nikita Willy")
+//setOfIndonesianNames.insert("Nikita Willy")
+//print(setOfIndonesianNames)
 
-var setOfIndonesianNames = Set<String>()
-setOfIndonesianNames.insert("Nikita Willy")
-setOfIndonesianNames.insert("Nikita Willy")
-print(setOfIndonesianNames)
+
+//ENUMS
+//enum Weekday {
+//    case monday, tuesday, wednesday, thursday, friday, saturday, sunday
+//}
+//var today = Weekday.friday
+//print(today)
+//today = Weekday.saturday
+//print(today)
+//today = .sunday
+//print(today)
+
+//DAY 4
+
+//TYPE ANNOTATION
+//can omit the last equation so instead of
+//String
+//let string: String = ""
+//
+////Integer
+//let integer: Int = 0
+//
+////Booolean
+//let boolean: Bool = false
+//
+////Array
+//let array: [String] = []
+//
+////Dictionary
+//let dictionary: [String:String] = [:]
+//
+////Set
+//let set: Set<String> = Set([])
+
+//can omit the last equation so e.g., in string, this is enough - let string: String
+//use type annotatio because of three reasons. 1. Swift dont know the type, 2. want to use different type, 3. dont want assign value yeet
+
+//CHECKPOINT 2
+//let arrayOfStrings : [String] = ["a", "b", "c"]
+//let countArray = arrayOfStrings.count
+//print (countArray)
+//let setOfIntegers: Set<Int> = Set([1,2,2])
+//let countSet = setOfIntegers.count
+//print (countSet)
 
 
-//tesuto
