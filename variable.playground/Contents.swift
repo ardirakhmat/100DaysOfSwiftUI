@@ -118,4 +118,57 @@ import SwiftUI
 //let countSet = setOfIntegers.count
 //print (countSet)
 
+//DAY 5
 
+//IF CONDITION
+//self explanatory
+
+//SWITCH STATEMENT WITH ENUM
+//enum Weather {
+//    case sunny, rainy
+//}
+//let currentWeather = Weather.rainy
+//
+//switch currentWeather {
+//case .rainy:
+//    print("bring an umbrella")
+//case .sunny:
+//    print("wear sunscreen")
+//}
+
+//TERNARY OPERATOR
+//first example
+//let theNumber = 99
+//let moreOrLess100 = theNumber >= 100 ? "more than 100" : "less than 100"
+//print (moreOrLess100)
+////second example (enum)
+//enum gender {
+//    case male, female
+//}
+//let myGender = gender.male
+//let choiceOfBathroom = myGender == .male ? "go to the men's bathroom" : "go to the women's bathroom"
+//print(choiceOfBathroom)
+
+//DAY 6
+//LOOP
+//let programmingLanguage = ["Swift", "Go", "Typescript"]
+//for language in programmingLanguage {
+//    print(" I have learned \(language)")
+//}
+//
+////nested loop
+//for i in 1...3 {
+//    print("The \(i) times table")
+//    for j in 1..<4 {
+//        print ("\(i) x \(j) = \(i*j)")
+//    }
+//}
+
+//loop without loop variable
+//var powerRanger: String = ""
+//for _ in 1...2 {
+//    powerRanger += "Go "
+//}
+//print(powerRanger)
+
+//WHILE
