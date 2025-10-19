@@ -245,39 +245,72 @@ import SwiftUI
 //}
 
 //CHECKPOINT 4
-enum numberError: Error {
-    case noNumber, tooManyNumber, noRoot
+//enum numberError: Error {
+//    case noNumber, tooManyNumber, noRoot
+//}
+//
+//func errorNumber (number: Int) throws -> Int {
+//    if number > 10_000 {
+//        throw numberError.tooManyNumber
+//    }
+//    if number <= 0 {
+//        throw numberError.noNumber
+//    }
+//    for i in 1...100 {
+//        if number == i * i {
+//            return i
+//        }
+//    }
+//    throw numberError.noRoot
+//}
+//
+//do {
+//    let testNumber = 9801
+//    let result = try errorNumber(number: testNumber)
+//    print(result)
+//}
+//catch numberError.noNumber {
+//    print ("number can't be zero or below")
+//}
+//catch numberError.tooManyNumber {
+//    print ("please input within 10.000")
+//}
+//catch numberError.noRoot {
+//    print("there is no square root for this number")
+//}
+//catch {
+//    print("there was an error")
+//}
+
+//DAY 9 CLOSURES, PASSING FUNCTIONS INTO FUNCTIONS, AND CHECKPOINT 5
+//CREATE AND USE CLOSURES
+
+//Closure 1
+let sayHello = {
+    print("Hi there!")
 }
 
-func errorNumber (number: Int) throws -> Int {
-    if number > 10_000 {
-        throw numberError.tooManyNumber
-    }
-    if number <= 0 {
-        throw numberError.noNumber
-    }
-    for i in 1...100 {
-        if number == i * i {
-            return i
-        }
-    }
-    throw numberError.noRoot
+//Closure 2
+let sayHi = { (name: String) -> String in
+    "Hi \(name)!"
 }
 
-do {
-    let testNumber = 9801
-    let result = try errorNumber(number: testNumber)
-    print(result)
+//Closure 3
+func greetUser() {
+    print("Hi there!")
 }
-catch numberError.noNumber {
-    print ("number can't be zero or below")
+var greetCopy: () -> Void = greetUser
+
+//Closure 4
+func getUserData(for id: Int) -> String {
+    if id == 1989 {
+        return "Taylor Swift"
+    } else {
+        return "Anonymous"
+    }
 }
-catch numberError.tooManyNumber {
-    print ("please input within 10.000")
-}
-catch numberError.noRoot {
-    print("there is no square root for this number")
-}
-catch {
-    print("there was an error")
-}
+
+let data: (Int) -> String = getUserData
+let user = data(1989)
+print(user)
+
