@@ -245,31 +245,39 @@ import SwiftUI
 //}
 
 //CHECKPOINT 4
-//enum numberError: Error {
-//    case noNumber, tooManyNumber
-//}
-//
-//func errorNumber (number: Int) throws -> String {
-//    if number > 10_000 {
-//        throw numberError.tooManyNumber
-//    }
-//    if number <= 0 {
-//        throw numberError.noNumber
-//    }
-//    return "no issue"
-//}
-//
-//do {
-//    let testNumber = 5
-//    let result = try errorNumber(number: testNumber)
-//    print(result)
-//}
-//catch numberError.noNumber {
-//    print ("number can't be zero or below")
-//}
-//catch numberError.tooManyNumber {
-//    print ("please input within 10.000")
-//}
-//catch {
-//    print("there was an error")
-//}
+enum numberError: Error {
+    case noNumber, tooManyNumber, noRoot
+}
+
+func errorNumber (number: Int) throws -> Int {
+    if number > 10_000 {
+        throw numberError.tooManyNumber
+    }
+    if number <= 0 {
+        throw numberError.noNumber
+    }
+    for i in 1...100 {
+        if number == i * i {
+            return i
+        }
+    }
+    throw numberError.noRoot
+}
+
+do {
+    let testNumber = 9801
+    let result = try errorNumber(number: testNumber)
+    print(result)
+}
+catch numberError.noNumber {
+    print ("number can't be zero or below")
+}
+catch numberError.tooManyNumber {
+    print ("please input within 10.000")
+}
+catch numberError.noRoot {
+    print("there is no square root for this number")
+}
+catch {
+    print("there was an error")
+}
