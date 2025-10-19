@@ -1,6 +1,6 @@
 import SwiftUI
 
-//DAY 1
+//DAY 1 VARIABLES, CONSTANTS, STRINGS AND NUMBERS
 
 //STRING
 //var greetingHello = "Hello, playground"
@@ -12,7 +12,7 @@ import SwiftUI
 //let dividedByThree = bigNumber.isMultiple(of:3)
 //print (dividedByThree)
 
-//DAY 2
+//DAY 2 BOOLEANS, STRING INTERPOLATION AND CHECKPOINT 1
 
 //BOOLEAN
 //var boolean =  false
@@ -26,7 +26,7 @@ import SwiftUI
 //let fahrenheit = Double(celcius) * 9/5 + 32
 //print("The temperature is \(celcius) degree celcius or \(fahrenheit) degree fahrenheit")
 
-//DAY 3
+//DAY 3 ARRAYS, DICTIONARIES, SETS AND ENUMS
 
 //ARRAY
 //var array = ["Han", "So", "Hee"]
@@ -85,7 +85,7 @@ import SwiftUI
 //today = .sunday
 //print(today)
 
-//DAY 4
+//DAY 4 TYPE ANNOTATION AND CHECKPOINT 2
 
 //TYPE ANNOTATION
 //can omit the last equation so instead of
@@ -118,7 +118,7 @@ import SwiftUI
 //let countSet = setOfIntegers.count
 //print (countSet)
 
-//DAY 5
+//DAY 5 IF, SWITCH AND TERNARY OPERATOR
 
 //IF CONDITION
 //self explanatory
@@ -149,7 +149,7 @@ import SwiftUI
 //let choiceOfBathroom = myGender == .male ? "go to the men's bathroom" : "go to the women's bathroom"
 //print(choiceOfBathroom)
 
-//DAY 6
+//DAY 6 LOOPS, SUMMARY AND CHECKPOINT 3
 //LOOP
 //let programmingLanguage = ["Swift", "Go", "Typescript"]
 //for language in programmingLanguage {
@@ -172,3 +172,104 @@ import SwiftUI
 //print(powerRanger)
 
 //WHILE
+//var people = 2
+//while people < 10 {
+//    people += 2
+//    if people == 10 {
+//        print("We got 10 people.")
+//    }
+//}
+
+//CHECKPOINT 3 - FIZZ BUZZ
+//for i in 1...100{
+//    if i.isMultiple(of: 3) && i.isMultiple(of: 5){
+//        print("\(i) is FizzBuzz")
+//        continue
+//    } else if i.isMultiple(of: 3) {
+//        print("\(i) is Fizz")
+//    } else if i.isMultiple(of: 5) {
+//        print("\(i) is Buzz")
+//    }
+//}
+
+//DAY 7 FUNCTION, PARAMETER AND RETURN
+
+//RETURN VALUES FROM FUNCTION
+//let string1 = "cad"
+//let string2 = "bac"
+//func sameLetter(firstString: String, secondString: String) -> Bool{
+//    var sameString = false
+//    let sortedFirstString = firstString.sorted()
+//    let sortedSecondString = secondString.sorted()
+//    if sortedFirstString == sortedSecondString {
+//        sameString = true
+//    }
+//    return sameString
+//}
+//print(sameLetter(firstString: string1, secondString: string2))
+
+//DAY 8 DEFAULT VALUES, THROWING FUNCTIONS AND CHECKPOINT 4
+
+//HANDLE ERROR IN FUNCTION
+//enum PasswordError: Error {
+//    case short, obvious
+//}
+//func checkPassword(_ password: String) throws -> String {
+//    if password.count < 5 {
+//        throw PasswordError.short
+//    }
+//
+//    if password == "12345" {
+//        throw PasswordError.obvious
+//    }
+//
+//    if password.count < 8 {
+//        return "OK"
+//    } else if password.count < 10 {
+//        return "Good"
+//    } else {
+//        return "Excellent"
+//    }
+//}
+//let string = "12345"
+//
+//do {
+//    let result = try checkPassword(string)
+//    print("Password rating: \(result)")
+//} catch PasswordError.short {
+//    print("Please use a longer password.")
+//} catch PasswordError.obvious {
+//    print("I have the same combination on my luggage!")
+//} catch {
+//    print("There was an error.")
+//}
+
+//CHECKPOINT 4
+//enum numberError: Error {
+//    case noNumber, tooManyNumber
+//}
+//
+//func errorNumber (number: Int) throws -> String {
+//    if number > 10_000 {
+//        throw numberError.tooManyNumber
+//    }
+//    if number <= 0 {
+//        throw numberError.noNumber
+//    }
+//    return "no issue"
+//}
+//
+//do {
+//    let testNumber = 5
+//    let result = try errorNumber(number: testNumber)
+//    print(result)
+//}
+//catch numberError.noNumber {
+//    print ("number can't be zero or below")
+//}
+//catch numberError.tooManyNumber {
+//    print ("please input within 10.000")
+//}
+//catch {
+//    print("there was an error")
+//}
