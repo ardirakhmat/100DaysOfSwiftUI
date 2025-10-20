@@ -314,7 +314,7 @@ import SwiftUI
 //let user = data(1989)
 //print(user)
 //
-////Closure 5
+////Closure 5 -Example without closure
 //func captainFirstSorted(name1: String, name2: String) -> Bool {
 //    if name1 == "Suzanne" {
 //        return true
@@ -325,24 +325,24 @@ import SwiftUI
 //    return name1 < name2
 //}
 //
-let team = ["Gloria", "Suzanne", "Piper", "Tiffany", "Tasha"]
+//let team = ["Gloria", "Suzanne", "Piper", "Tiffany", "Tasha"]
 //let captainFirstTeam = team.sorted(by: captainFirstSorted)
 //print(captainFirstTeam)
 //
 ////Closure 6
-let leaderFirstSorted =  team.sorted(by:{(name1: String, name2: String) -> Bool in
-    if name1 == "Suzanne" {
-        return true
-    } else if name2 == "Suzanne" {
-        return false
-    }
-
-    return name1 < name2
-})
+//let leaderFirstSorted =  team.sorted(by:{(name1: String, name2: String) -> Bool in
+//    if name1 == "Suzanne" {
+//        return true
+//    } else if name2 == "Suzanne" {
+//        return false
+//    }
+//
+//    return name1 < name2
+//})
 
 //TRAILING CLOSURES AND SHORTHAND SYNTAX
 ////Shorthand and Trailing 1
-let member = ["Gloria", "Suzanne", "Piper", "Tiffany", "Tasha"]
+//let member = ["Gloria", "Suzanne", "Piper", "Tiffany", "Tasha"]
 //let memberLeaderSortedFirst = member.sorted { name1, name2 in
 //    if name1 == "Suzanne" {
 //            return true
@@ -381,22 +381,42 @@ let member = ["Gloria", "Suzanne", "Piper", "Tiffany", "Tasha"]
 //print(uppercaseMember)
 
 //ACCEPT FUNCTION AS PARAMETERS
-func makeArray (size: Int, using generator: () -> Int) -> [Int]{
-    var numbers = [Int]()
-    for _  in  0..<size {
-        let newNumbers = generator()
-        numbers.append(newNumbers)
-    }
-    return numbers
-}
-//First example
-let rolls = makeArray(size: 5) {
-    Int.random(in: 1...100)
-}
-print(rolls)
-//Second example
-func generateNumber() -> Int {
-    Int.random(in:1...100)
-}
-let newRolls = makeArray(size: 5, using: generateNumber)
-print(newRolls)
+//func makeArray (size: Int, using generator: () -> Int) -> [Int]{
+//    var numbers = [Int]()
+//    for _ in 0..<size {
+//        let newNumbers = generator()
+//        numbers.append(newNumbers)
+//    }
+//    return numbers
+//}
+////First example
+//let rolls = makeArray(size: 5) {
+//    Int.random(in: 1...100)
+//}
+//print(rolls)
+//
+////Second example
+//func generateNumber() -> Int {
+//    Int.random(in:1...100)
+//}
+//let newRolls = makeArray(size: 5, using: generateNumber)
+//print(newRolls)
+
+//CHECKPOINT 5
+//var luckyNumbers = [7, 4, 38, 21, 16, 15, 12, 33, 31, 49]
+////let sortedLuckyNumber = luckyNumbers.sorted()
+////print(sortedLuckyNumber)
+//
+//let oddLuckyNumbers = luckyNumbers.filter{$0 % 2 != 0}
+//print(oddLuckyNumbers)
+//
+//let sortedOddLuckyNumber = oddLuckyNumbers.sorted()
+//print(sortedOddLuckyNumber)
+//
+//let mapSortedOddLuckyNumber = sortedOddLuckyNumber.map {
+//    "\($0) is a lucky number"
+//}
+// print(mapSortedOddLuckyNumber)
+//
+
+
