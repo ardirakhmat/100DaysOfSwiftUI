@@ -325,20 +325,20 @@ import SwiftUI
 //    return name1 < name2
 //}
 //
-//let team = ["Gloria", "Suzanne", "Piper", "Tiffany", "Tasha"]
+let team = ["Gloria", "Suzanne", "Piper", "Tiffany", "Tasha"]
 //let captainFirstTeam = team.sorted(by: captainFirstSorted)
 //print(captainFirstTeam)
 //
 ////Closure 6
-//let leaderFirstSorted =  team.sorted(by:{(name1: String, name2: String) -> Bool in
-//    if name1 == "Suzanne" {
-//        return true
-//    } else if name2 == "Suzanne" {
-//        return false
-//    }
-//
-//    return name1 < name2
-//})
+let leaderFirstSorted =  team.sorted(by:{(name1: String, name2: String) -> Bool in
+    if name1 == "Suzanne" {
+        return true
+    } else if name2 == "Suzanne" {
+        return false
+    }
+
+    return name1 < name2
+})
 
 //TRAILING CLOSURES AND SHORTHAND SYNTAX
 ////Shorthand and Trailing 1
@@ -365,16 +365,38 @@ let member = ["Gloria", "Suzanne", "Piper", "Tiffany", "Tasha"]
 //}
 
 //Shorthand and Trailing 3
+//let memberLeaderSortedFirst3 = member.sorted  { $0 < $1 }
+
+
+//Shorthand and Trailing 4
 //let filterT = member.filter{
 //    $0.hasPrefix( "T" )
 //}
 //print(filterT)
 
-//Shorthand and Trailing 4
+//Shorthand and Trailing 5
 //let uppercaseMember = member.map {
 //    $0.uppercased()
 //}
 //print(uppercaseMember)
 
-
-
+//ACCEPT FUNCTION AS PARAMETERS
+func makeArray (size: Int, using generator: () -> Int) -> [Int]{
+    var numbers = [Int]()
+    for _  in  0..<size {
+        let newNumbers = generator()
+        numbers.append(newNumbers)
+    }
+    return numbers
+}
+//First example
+let rolls = makeArray(size: 5) {
+    Int.random(in: 1...100)
+}
+print(rolls)
+//Second example
+func generateNumber() -> Int {
+    Int.random(in:1...100)
+}
+let newRolls = makeArray(size: 5, using: generateNumber)
+print(newRolls)
