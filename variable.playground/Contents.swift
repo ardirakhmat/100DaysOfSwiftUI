@@ -286,31 +286,95 @@ import SwiftUI
 //CREATE AND USE CLOSURES
 
 //Closure 1
-let sayHello = {
-    print("Hi there!")
-}
+//let sayHello = {
+//    print("Hi there!")
+//}
+//
+////Closure 2
+//let sayHi = { (name: String) -> String in
+//    "Hi \(name)!"
+//}
+//
+////Closure 3
+//func greetUser() {
+//    print("Hi there!")
+//}
+//var greetCopy: () -> Void = greetUser
+//
+////Closure 4
+//func getUserData(for id: Int) -> String {
+//    if id == 1989 {
+//        return "Taylor Swift"
+//    } else {
+//        return "Anonymous"
+//    }
+//}
+//
+//let data: (Int) -> String = getUserData
+//let user = data(1989)
+//print(user)
+//
+////Closure 5
+//func captainFirstSorted(name1: String, name2: String) -> Bool {
+//    if name1 == "Suzanne" {
+//        return true
+//    } else if name2 == "Suzanne" {
+//        return false
+//    }
+//
+//    return name1 < name2
+//}
+//
+//let team = ["Gloria", "Suzanne", "Piper", "Tiffany", "Tasha"]
+//let captainFirstTeam = team.sorted(by: captainFirstSorted)
+//print(captainFirstTeam)
+//
+////Closure 6
+//let leaderFirstSorted =  team.sorted(by:{(name1: String, name2: String) -> Bool in
+//    if name1 == "Suzanne" {
+//        return true
+//    } else if name2 == "Suzanne" {
+//        return false
+//    }
+//
+//    return name1 < name2
+//})
 
-//Closure 2
-let sayHi = { (name: String) -> String in
-    "Hi \(name)!"
-}
+//TRAILING CLOSURES AND SHORTHAND SYNTAX
+////Shorthand and Trailing 1
+let member = ["Gloria", "Suzanne", "Piper", "Tiffany", "Tasha"]
+//let memberLeaderSortedFirst = member.sorted { name1, name2 in
+//    if name1 == "Suzanne" {
+//            return true
+//        } else if name2 == "Suzanne" {
+//            return false
+//        }
+//    
+//        return name1 < name2
+//}
 
-//Closure 3
-func greetUser() {
-    print("Hi there!")
-}
-var greetCopy: () -> Void = greetUser
+////Shorthand and Trailing 2 (optional)
+//let memberLeaderSortedFirst2 = member.sorted {
+//    if $0 == "Suzanne" {
+//            return true
+//        } else if $1 == "Suzanne" {
+//            return false
+//        }
+//    
+//        return $0 < $1
+//}
 
-//Closure 4
-func getUserData(for id: Int) -> String {
-    if id == 1989 {
-        return "Taylor Swift"
-    } else {
-        return "Anonymous"
-    }
-}
+//Shorthand and Trailing 3
+//let filterT = member.filter{
+//    $0.hasPrefix( "T" )
+//}
+//print(filterT)
 
-let data: (Int) -> String = getUserData
-let user = data(1989)
-print(user)
+//Shorthand and Trailing 4
+//let uppercaseMember = member.map {
+//    $0.uppercased()
+//}
+//print(uppercaseMember)
+
+
 
