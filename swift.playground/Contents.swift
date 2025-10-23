@@ -420,3 +420,29 @@ import SwiftUI
 //
 
 
+//DAY 10
+//How to create your own structes
+//struct Employee {
+//    let name: String
+//    var vacationRemaining: Int
+//
+//    mutating func takeVacation(days: Int) {
+//        if vacationRemaining > days {
+//            vacationRemaining -= days
+//            print("I'm going on vacation!")
+//            print("Days remaining: \(vacationRemaining)")
+//        } else {
+//            print("Oops! There aren't enough days remaining.")
+//        }
+//    }
+//}
+//
+//var archer = Employee(name: "Sterling Archer", vacationRemaining: 14)
+//archer.takeVacation(days: 5)
+//print(archer.vacationRemaining)
+
+//Note:
+//Variables and constants that belong to structs are called properties.
+//Functions that belong to structs are called methods.
+//When we create a constant or variable out of a struct, we call that an instance – you might create a dozen unique instances of the Employee struct, for example.
+
