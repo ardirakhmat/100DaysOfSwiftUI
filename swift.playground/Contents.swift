@@ -367,7 +367,6 @@ import SwiftUI
 //Shorthand and Trailing 3
 //let memberLeaderSortedFirst3 = member.sorted  { $0 < $1 }
 
-
 //Shorthand and Trailing 4
 //let filterT = member.filter{
 //    $0.hasPrefix( "T" )
